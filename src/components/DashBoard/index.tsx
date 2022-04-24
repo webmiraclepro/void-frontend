@@ -2,8 +2,8 @@ import { useState, useCallback, useEffect } from 'react'
 import voidContract from "../Web3/voidContract";
 import web3 from "../Web3";
 import { AbiItem } from 'web3-utils'
-import { DIVIDEN_ABI, CHAIN_ID } from "../../config";
-
+import { DIVIDEN_ABI } from "../../abis";
+import { CHAIN_ID } from '../../config';
 import TransactionHistory from './TransactionHistory'
 import Statistic from './Statistic'
 import Reward from './Reward'

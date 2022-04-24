@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import voidContract from "../Web3/voidContract";
 import web3 from "../Web3";
 import { AbiItem } from 'web3-utils'
-import { DIVIDEN_ABI, CHAIN_ID } from "../../config";
+import { DIVIDEN_ABI } from "../../abis";
+import { CHAIN_ID } from "../../config";
 import { formatWalletAddress, readAddress } from "../../utils"
 
 interface ButtonProps {

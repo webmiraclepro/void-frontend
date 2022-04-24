@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useState, useCallback, useEffect } from 'react'
 
 import ConnectButton from "../ConnectButton";
@@ -28,7 +29,7 @@ const RNavBar = () => {
     <div className="h-[1280px] ml-[28px] w-[400px] overflow-hidden">
       <div className="flex  h-full min-w-[400px]">
         <div className="flex flex-row h-full bg-white w-full -mb-[43px]">
-          <img className="object-cover w-[1px] h-full" src="/img/linie-2@1x.png" />
+          <Image className="object-cover w-[1px] h-full" src="/img/linie-2@1x.png" alt=""/>
           <div className="flex flex-col mt-[90px] ml-[31px] items-start min-h-[648px] w-[338px]">
             <div className="flex items-start w-[338px]">
               <div className="-mt-[40px] w-[219px] h-[58px]" >
@@ -53,8 +54,6 @@ const RNavBar = () => {
       </div>
     </div>
   )
-
 }
-
 
 export default RNavBar

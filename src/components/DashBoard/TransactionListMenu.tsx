@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function TransactionListMenu() {
   return (
     <div className="items-center flex-col flex mt-[26px] min-h-[34px] w-full">
@@ -7,7 +9,7 @@ function TransactionListMenu() {
         <div className="whitespace-nowrap tracking-normal min-h-[25px] min-w-[47px]">Value</div>
         <div className="whitespace-nowrap tracking-normal min-h-[25px]">Status</div>
       </div>
-      <img className="h-[1px] mt-[4px] w-full object-cover" src="/img/linie-1@1x.png" />
+      <Image className="h-[1px] mt-[4px] w-full object-cover" src="/img/linie-1@1x.png" alt=""/>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import TransactionListMenu from './TransactionListMenu'
 
 const data = {
@@ -21,7 +22,7 @@ function TransactionHistory() {
             <div className="h-[22px] w-[107px]">
               <div className="ml-0 mt-0 tracking-normal whitespace-nowrap font-poppins font-medium text-victoria text-fsm">{data.historydate}</div>
               <div className="flex justify-end ml-[41px] -mt-[14px] w-[66px] h-[16px]">
-                <img className="object-cover w-[16px]" src="/img/45-1@1x.png" />
+                <Image className="object-cover w-[16px]" src="/img/45-1@1x.png" alt=""/>
               </div>
             </div>
           </div>
