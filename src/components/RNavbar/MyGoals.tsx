@@ -19,27 +19,27 @@ const MyGoals = () => {
             <div className="flex flex-1 w-[20px] ml-[160px]">
               <div className="flex flex-col flex-1 items-start ml-[2.2px] mr-[3px] mt-[3px] min-h-[13.77px]">
                 <div className="relative -ml-[0.6px] -mt-[1px] w-[16px] h-[4px]">
-                  <Image className="absolute left-[9px] top-0 object-cover w-[4px] h-[4px]" src="/img/vector-11@1x.png" alt=""/>
-                  <Image className="absolute left-[12px] top-[2px] object-cover w-[4px] h-[1px]" src="/img/vector-12@1x.png" alt=""/>
-                  <Image className="absolute left-0 top-[2px] object-cover h-[1px] w-[10px]" src="/img/vector-13@1x.png" alt=""/>
+                  <img className="absolute left-[9px] top-0 object-cover w-[4px] h-[4px]" src="/img/vector-11@1x.png" alt=""/>
+                  <img className="absolute left-[12px] top-[2px] object-cover w-[4px] h-[1px]" src="/img/vector-12@1x.png" alt=""/>
+                  <img className="absolute left-0 top-[2px] object-cover h-[1px] w-[10px]" src="/img/vector-13@1x.png" alt=""/>
                 </div>
                 <div className="relative -ml-[0.6px] mt-[1px] w-[16px] h-[4px]">
-                  <Image className="absolute left-[3px] top-0 object-cover h-[4px] w-[4px]" src="/img/vector-8@1x.png" alt=""/>
-                  <Image className="absolute left-[6px] top-[2px] object-cover h-[1px] w-[10px]" src="/img/vector-9@1x.png" alt=""/>
-                  <Image className="absolute left-0 top-[2px] object-cover w-[4px] h-[1px]" src="/img/vector-10@1x.png" alt=""/>
+                  <img className="absolute left-[3px] top-0 object-cover h-[4px] w-[4px]" src="/img/vector-8@1x.png" alt=""/>
+                  <img className="absolute left-[6px] top-[2px] object-cover h-[1px] w-[10px]" src="/img/vector-9@1x.png" alt=""/>
+                  <img className="absolute left-0 top-[2px] object-cover w-[4px] h-[1px]" src="/img/vector-10@1x.png" alt=""/>
                 </div>
                 <div className="relative -ml-[0.6px] mt-[1px] w-[16px] h-[4px]">
-                  <Image className="absolute left-[9px] top-0 object-cover w-[4px] h-[4px]" src="/img/vector-11@1x.png" alt =""/>
-                  <Image className="absolute left-[12px] top-[2px] object-cover w-[4px] h-[1px]" src="/img/vector-12@1x.png" alt=""/>
-                  <Image className="absolute left-0 top-[2px] object-cover h-[1px] w-[10px]" src="/img/vector-13@1x.png" alt=""/>
+                  <img className="absolute left-[9px] top-0 object-cover w-[4px] h-[4px]" src="/img/vector-11@1x.png" alt =""/>
+                  <img className="absolute left-[12px] top-[2px] object-cover w-[4px] h-[1px]" src="/img/vector-12@1x.png" alt=""/>
+                  <img className="absolute left-0 top-[2px] object-cover h-[1px] w-[10px]" src="/img/vector-13@1x.png" alt=""/>
                 </div>
               </div>
             </div>
           </div>
           <div className="mt-[30px] -ml-[20px] flex flex-row justify-center space-x-10 items-center">
             <div className="relative w-[92px] h-[92px]">
-              <Image className="absolute left-[46px] top-0 object-cover h-[69px] w-[46px]" src="/img/pfad-1@1x.png" alt=""/>
-              <Image className="absolute left-0 top-0 object-cover h-[92px] w-[85px]" src="/img/pfad-2@1x.png" alt=""/>
+              <img className="absolute left-[46px] top-0 object-cover h-[69px] w-[46px]" src="/img/pfad-1@1x.png" alt=""/>
+              <img className="absolute left-0 top-0 object-cover h-[92px] w-[85px]" src="/img/pfad-2@1x.png" alt=""/>
               <div className="absolute left-[25px] top-[36px] text-center whitespace-nowrap tracking-normal font-arial-regular text-green-blue text-xl font-normal ">{data.vacationPro}</div>
             </div>
             <div className="whitespace-nowrap tracking-normal font-avenirnext-medium text-x04051a text-xxxl font-bold">{data.vacation}</div>
@@ -49,9 +49,9 @@ const MyGoals = () => {
         <div className="flex flex-col -mt-[30px] bg-[url('/img/pfad-6@1x.png')] bg-cover h-[263px] w-[488px]">
           <div className="mt-[60px] -ml-[30px] flex flex-row justify-center space-x-10 items-center">
             <div className="relative w-[92px] h-[92px]">
-              <Image className="absolute left-[46px] top-0 object-cover h-[16px] w-[27px]" src="/img/pfad-3@1x.png" alt=""/>
-              <Image className="absolute left-[67px] top-[9px] object-cover w-[24px] h-[74px]" src="/img/pfad-4@1x.png" alt=""/>
-              <Image className="absolute left-0 top-0 object-cover h-[92px] w-[73px]" src="/img/pfad-5@1x.png" alt=""/>
+              <img className="absolute left-[46px] top-0 object-cover h-[16px] w-[27px]" src="/img/pfad-3@1x.png" alt=""/>
+              <img className="absolute left-[67px] top-[9px] object-cover w-[24px] h-[74px]" src="/img/pfad-4@1x.png" alt=""/>
+              <img className="absolute left-0 top-0 object-cover h-[92px] w-[73px]" src="/img/pfad-5@1x.png" alt=""/>
               <div className="absolute left-[25px] top-[33px] tracking-normal text-center whitespace-nowrap font-arial-regular font-normal text-green-blue text-xl">{data.lamboPro}</div>
             </div>
             <div className="whitespace-nowrap tracking-normal font-avenirnext-medium text-x04051a text-xxxl font-bold">{data.lambo}</div>

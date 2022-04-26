@@ -9,7 +9,7 @@ function TransactionListMenu() {
         <div className="whitespace-nowrap tracking-normal min-h-[25px] min-w-[47px]">Value</div>
         <div className="whitespace-nowrap tracking-normal min-h-[25px]">Status</div>
       </div>
-      <Image className="h-[1px] mt-[4px] w-full object-cover" src="/img/linie-1@1x.png" alt=""/>
+      <img className="h-[1px] mt-[4px] w-full object-cover" src="/img/linie-1@1x.png" alt=""/>
     </div>
   );
 }

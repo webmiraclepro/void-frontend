@@ -14,15 +14,15 @@ const SideBar = () => {
             <div className="flex items-end justify-center min-w-full h-full">
                 <div className="bg-x04051a h-[1476px] -mb-[60px] w-[402px] border border-violet-blue">
                     <div className="flex flex-col ml-[67px] mt-[160px] w-[246px] min-h-[1185px] items-center ">
-                        <Image className="h-[102px] w-[212px] object-cover ml-2" src="/img/voidcard-logo@1x.png" alt=""/>
+                        <Image className="h-[102px] w-[212px] object-cover ml-2" src="/img/voidcard-logo@1x.png" width={212} height={102} alt=""/>
                         <div className="flex items-start h-[970px] min-w-[247px] mt-[119px] mr-[1px]">
                             <div className="items-start flex flex-col mt-[0.62px] min-h-[959px] w-[27px]">
                                 <div className="bg-[url('/img/combined-shape@1x.png')] bg-center bg-cover h-[25px] w-[25px] ml-[1px]"></div>
                                 <div className="bg-[url('/img/combined-shape-1-1x-png@1x.png')] bg-center bg-cover h-[25px] w-[25px] ml-[1px] mt-[55px]"></div>
                                 <div className="bg-[url('/img/combined-shape-2-1x-png@1x.png')] bg-center bg-cover h-[25px] w-[25px] ml-[1px] mt-[56px]"></div>
                                 <div className="bg-[url('/img/pfad-16@1x.png')] bg-center bg-cover h-[27px] w-[27px] mt-[55px]">
-                                    <Image className="ml-[12px] mt-[6px] h-[14px] w-[2px] object-cover" src={"/img/pfad-17@1x.png"} alt=""/>
-                                    <Image className="ml-[6px] -mt-[8px] h-[2px] w-[14px] object-cover" src={"/img/pfad-18@1x.png"} alt=""/>
+                                    <Image className="ml-[12px] mt-[6px] h-[14px] w-[2px] object-cover" src={"/img/pfad-17@1x.png"} width={2} height={14} alt=""/>
+                                    <Image className="ml-[6px] -mt-[8px] h-[2px] w-[14px] object-cover" src={"/img/pfad-18@1x.png"} width={14} height={2} alt=""/>
                                 </div>
                                 <div className="bg-[url('/img/combined-shape-3@1x.png')] bg-center bg-cover h-[25px] w-[25px] mt-[666px] ml-[1px]"></div>
                             </div>

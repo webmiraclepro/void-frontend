@@ -63,15 +63,15 @@ function Statistic() {
               <div className="relative h-[317px] -mb-[92px] -ml-[35px] w-[394px] font-poppins font-semibold text-regent-gray text-fsl">
                 <div className="bg-center bg-cover items-start flex h-[181px] min-w-[324px] absolute left-[35px] top-[12px] py-0 px-0 bg-[url('/img/vector-4@1x.png')]" >
                   <div className="relative mt-0 h-full w-[282px]">
-                       <Image className="absolute left-[143px] top-0 h-[80px] object-cover w-[139px]" src={"/img/vector-3@1x.png"} alt=""/>
-                       <Image className="absolute left-[42px] top-0 h-[80px] object-cover w-[139px]" src={"/img/vector-2@1x.png"} alt=""/>
-                       <Image className="absolute left-0 top-[42px] h-[139px] w-[80px] object-cover" src={"/img/vector-1@1x.png"} alt=""/>
+                       <img className="absolute left-[143px] top-0 h-[80px] object-cover w-[139px]" src={"/img/vector-3@1x.png"} alt=""/>
+                       <img className="absolute left-[42px] top-0 h-[80px] object-cover w-[139px]" src={"/img/vector-2@1x.png"} alt=""/>
+                       <img className="absolute left-0 top-[42px] h-[139px] w-[80px] object-cover" src={"/img/vector-1@1x.png"} alt=""/>
                   </div>
                 </div>
                 <div className="whitespace-nowrap absolute left-[39px] top-[197px] h-[26px] tracking-normal w-[55px]">{data.low}</div>
                 <div className="h-[26px] absolute left-[316px] top-[197px] tracking-normal whitespace-nowrap w-[42px]">{data.high}</div>
                 <div className="bg-cover bg-center h-[317px] absolute left-0 top-0 w-[394px] bg-[url('/img/bg@1x.png')]">
-                  <Image className="absolute left-[177px] top-[87px] object-cover h-[87px] w-[124px]" src="/img/needle@1x.png" alt=""/>
+                  <img className="absolute left-[177px] top-[87px] object-cover h-[87px] w-[124px]" src="/img/needle@1x.png" alt=""/>
                   <div className="absolute left-[183px] top-[136px] rounded-[14px] shadow-[0px_4px_24px_ #1f61c438] h-[28px] w-[28px] border-[4px] border-white" style={{ background: 'linear-gradient(180deg, #0d18a2 0%, rgba(63, 58, 185, 0.47) 34.48%, rgba(255, 255, 255, 0) 100%)' }}></div>
                 </div>
               </div>
