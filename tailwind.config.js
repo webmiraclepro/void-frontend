@@ -53,7 +53,6 @@ module.exports = {
     require('daisyui'),
     require('tailwind-scrollbar'),
   ],
-  // ppurge: ["./pages/**/*.js", "./components/**/*.js"],
   variants: {
     scrollbar: ['rounded']
   },
