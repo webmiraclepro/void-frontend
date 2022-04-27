@@ -1,5 +1,3 @@
-import classNames from 'tailwindcss-classnames';
-
 function ChartBar(props: any) {
   const { caption, upheight, downheight} = props;
   return (

@@ -38,10 +38,10 @@ function Statistic() {
             </div>
             <div className="flex flex-1 items-end mb-[21px] ml-[30px] mr-[36.5px] min-w-[calc(100.00% -122px)]">
               <ChartBar caption={'Jan'} upheight={102} downheight={41} />
-              <ChartBar caption={'Feb'} upheight={102} downheight={19} />
+              <ChartBar caption={'Feb'} upheight={142} downheight={19} />
               <ChartBar caption={'Mar'} upheight={102} downheight={37} />
               <ChartBar caption={'Apr'} upheight={102} downheight={12} />
-              <ChartBar caption={'Mai'} upheight={102} downheight={37} />
+              <ChartBar caption={'Mai'} upheight={132} downheight={37} />
               <ChartBar caption={'Jun'} upheight={102} downheight={37} />
               <ChartBar caption={'Jul'} upheight={102} downheight={37} />
               <ChartBar caption={'Aug'} upheight={102} downheight={37} />
