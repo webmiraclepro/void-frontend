@@ -8,7 +8,7 @@ import { formatWalletAddress, readAddress } from "../../utils"
 
 interface ButtonProps {
   actionText: string,
-  onClaim: (bal: string | undefined) => void,
+  onClaim: () => void,
 }
 
 const ClaimButton = ({ actionText, onClaim }: ButtonProps) => {
@@ -16,22 +16,7 @@ const ClaimButton = ({ actionText, onClaim }: ButtonProps) => {
   const claim = async () => {
     try {
       const selectedAddress = await readAddress();
-      claimDividend(selectedAddress);
-    } catch (e: any) {
-      console.log(e);
-    }
-  }
-
-  const claimDividend = async (account: string ) => {
-    if (window.ethereum.chainId !== CHAIN_ID) {
-      onClaim(undefined);
-      return;
-    }
-    try {
-      // const dividenDistributor = await StakingContract.methods.distributorAddress.call().call();
-      // const dividenContract = new web3.eth.Contract(DIVIDEN_ABI as AbiItem[], dividenDistributor);
-      // const claimed = await dividenContract.methods.claimDividend().send({from: account});
-      // console.log("claimed", claimed);
+      onClaim();
     } catch (e: any) {
       console.log(e);
     }

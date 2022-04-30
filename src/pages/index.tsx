@@ -2,6 +2,7 @@ import NavBar from '../components/Navbar';
 import StakingInfo from '../components/StakingInfo';
 import StakingBody from '../components/StakingBody';
 
+
 import AddressProvider from '../components/AddressProvider';
 
 const Home = () => {
@@ -11,9 +12,7 @@ const Home = () => {
         <NavBar />
         <StakingInfo />
         <StakingBody />
-
       </div>
-
     </AddressProvider>
   )
 }

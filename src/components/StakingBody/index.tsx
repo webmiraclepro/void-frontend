@@ -1,15 +1,29 @@
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import { useState, useEffect } from 'react';
+import React from 'react';
+import ReactModal from 'react-modal';
+import Image from 'next/image';
 import StakingContract from '../Web3/StakingContract';
 import NftContract from '../Web3/NftContract';
+import StakeModal from '../StakeModal';
 import { useAddress } from '../AddressProvider';
-
 
 const StakingBody = () => {
   const { address } = useAddress();
+  const [isStake, setIsStake] = useState(false);
+  const [isUnStake, setIsUnStake] = useState(false);
   const [tokenPerBlock, setTokenPerBlock] = useState<String | undefined>(undefined);
   const [amountNft, setAmountNft] = useState<String | undefined>(undefined);
-  const [tokenIds, setTokenIds] = useState([{}]);
+  const [tokenIds, setTokenIds] = useState<Array<{token_id:string}> | undefined>(undefined);
+
+  function openModal() {
+
+  }
+
+  function closeModal() {
+    setIsUnStake(false);
+    setIsStake(false);
+  }
+
   const getTokenPerBlock = async () => {
     const tokensPerBlock = await StakingContract.methods.tokensPerBlock.call().call();
     // setTokenPerBlock(tokensPerBlock);
@@ -21,9 +35,7 @@ const StakingBody = () => {
     }
     try {
       const tokenIds = await NftContract.methods.walletOfOwner(account).call();
-      setTokenIds([{token_id:"sdfasfsfd"},
-      {token_id:"sdfasfdfsdfsfd"}
-    ]);
+      setTokenIds(tokenIds);
       setAmountNft(tokenIds.length);
       console.log(tokenIds);
     } catch (e: any) {
@@ -32,8 +44,11 @@ const StakingBody = () => {
   }
 
   useEffect(() => {
-    getTokenPerBlock();
-    getTokenIdsofWallet(address);
+    if (address) {
+
+      // getTokenPerBlock();
+      // getTokenIdsofWallet(address);
+    }
   }, [address])
 
   return (
@@ -60,20 +75,10 @@ const StakingBody = () => {
             Nft to stake
           </div>
           <div id="staking" className='flex h-[40px] w-[150px] text-center rounded-[25px] shadow-[0_5px_15px_#0000004d] bg-[#9ae0fe] my-[25px]  hover:border border-gray-900 cursor-pointer'>
-            <select className="select select-bordered w-full max-w-xs">
-              <option disabled selected>Choose Nft</option>
-              {console.log(tokenIds)}
-              {tokenIds.map((k:any, index) => {
-              return(
-                <option>{k.token_id}</option>
-              )
-              })}
-              
-            </select>
-            {/* <button className='flex-1 font-avenirnext-bold font-bold text-xl rounded-[25px] text-center text-x04051a w-full h-full' onClick={() => { console.log("stake") }}>
+            <button className='flex-1 font-avenirnext-bold font-bold text-xl rounded-[25px] text-center text-x04051a w-full h-full' onClick={() => {setIsStake(true); setIsUnStake(false)}}>
               Choose Nft
             </button>
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" className="w-[25px] h-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg> */}
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" className="w-[25px] h-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg>
           </div>
         </div>
         <div className='w-[50px] h-[50px]'>
@@ -95,7 +100,7 @@ const StakingBody = () => {
             Nft to unStake
           </div>
           <div id="unstaking" className='flex w-[150px] h-[40px] text-center rounded-[25px] bg-[#ffe782] shadow-[0_5px_15px_#0000004d] my-[25px] hover:border border-gray-900 cursor-pointer'>
-            <button className='flex-1 font-avenirnext-bold font-bold text-xl rounded-[25px] text-center text-x04051a w-full h-full' onClick={() => { console.log("unstake") }}>
+            <button className='flex-1 font-avenirnext-bold font-bold text-xl rounded-[25px] text-center text-x04051a w-full h-full' onClick={() => {setIsUnStake(true); setIsStake(false)}}>
               Choose Nft
             </button>
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" className="w-[25px] h-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg>
@@ -104,7 +109,7 @@ const StakingBody = () => {
         </div>
 
       </div>
-
+      <StakeModal tokenIds={[{token_id:"12"}, {token_id:"12"}, {token_id:"12"}]} isClaim={false} isStake={isStake} isUnStake={isUnStake} closeModal={closeModal} />
     </div>
   )
 }

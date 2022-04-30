@@ -5,11 +5,13 @@ import FactoryTokenContract from "../Web3/FactoryTokenContract"
 import StakingContract from '../Web3/StakingContract';
 import NftContract from '../Web3/NftContract';
 import {MAPESTAKE_ADDRESS} from '../../abis/Staking';
+import StakeModal from '../StakeModal';
 import {useAddress} from '../AddressProvider';
 import { CHAIN_ID } from '../../config';
 
 const StakingInfo = () => {
   const {address} = useAddress();
+  const [isClaim, setIsClaim] = useState(false);
   const [totalToken, setTotalToken] = useState<String | undefined>(undefined);
   const [stakeEarned, setStakeEarned] = useState<String | undefined>(undefined);
   const [staked, setStaked] = useState<String | undefined> (undefined);
@@ -44,10 +46,17 @@ const StakingInfo = () => {
     setStaked(len);
   }
 
+  function closeModal() {
+    setIsClaim(false);
+  }
+
   useEffect(() => {
-    getFactoryTokenBalance(address);
-    // getCurrentStakeEarned(address);// replace address into tokenId
-    getStaked(MAPESTAKE_ADDRESS);
+    if(address) {
+      // getFactoryTokenBalance(address);
+      // getCurrentStakeEarned(address);// replace address into tokenId
+      // getStaked(MAPESTAKE_ADDRESS);
+      
+    }
   }, [address])
   
   return (
@@ -78,9 +87,10 @@ const StakingInfo = () => {
             <h5 className="text-center">{stakeEarned}</h5>
             <h5 className="text-center">UNREALIZED</h5>
           </div>
-          <ClaimButton actionText="Claim" onClaim={handleOnClaim} />
+          <ClaimButton actionText="Claim" onClaim={() => {setIsClaim(true)}} />
         </div>
       </div>
+      <StakeModal tokenIds={[{token_id:"12"}, {token_id:"12"}, {token_id:"12"}]} isClaim={isClaim} isStake={false} isUnStake={false} closeModal={closeModal} />
     </div>
   )
 }
