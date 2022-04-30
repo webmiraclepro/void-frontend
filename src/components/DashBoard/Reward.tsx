@@ -6,9 +6,6 @@ interface rewardProps {
     totalDistributed: String | undefined,
 }
 function Reward(props: rewardProps) {
-  console.log(props.totalReward);
-  console.log(props.claimableReward);
-  console.log(props.totalDistributed);
   return (
     <div className="flex flex-col items-start bg-black-haze rounded-[10px] ml-[0.5px] mt-[18px] min-h-[309px] w-full py-[27.5px] px-4">
       <div className="tracking-normal whitespace-nowrap min-h-[35px] ml-6 font-poppins font-semibold text-x04051a text-xxxl">Reward in DAI</div>
@@ -27,7 +24,7 @@ function Reward(props: rewardProps) {
         </div>
         <div className="flex flex-col items-start mt-[21px] w-1/3 min-h-[179px]  ">
           <div className="whitespace-nowrap tracking-normal mt-1 min-h-[32px] font-avenirnext-medium font-medium text-x04051a text-xxl">My Total Rewards</div>
-          <div className="whitespace-nowrap tracking-[0.16px] mt-[68px] min-h-[46px] font-avenirnext-demibold font-bold text-x04051a text-xxxxxl">$1236</div>
+          <div className="whitespace-nowrap tracking-[0.16px] mt-[68px] min-h-[46px] font-avenirnext-demibold font-bold text-x04051a text-xxxxxl">{formatToCurrency(Number(props.totalReward))}</div>
           <div className="flex items-start -ml-[1.41px] mt-2.5 h-[24px] min-w-[189px]">
             <div className="flex flex-col items-start -mt-[33px] min-h-[176px] rotate-90 w-[86px]">
               <div className="w-[13px] -ml-[14px] mt-[110px] h-[13px]">

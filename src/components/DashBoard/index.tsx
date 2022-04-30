@@ -20,7 +20,7 @@ const DashBoard = () => {
   const [claimableReward, setClaimableRewrd] = useState<String | undefined>(undefined)
   const [totalReward, setTotalReward] = useState<String | undefined>(undefined)
 
-  const init = async () => {
+  const getRewardInfo = async () => {
     const dividenDistributor = await voidContract.methods.distributorAddress.call().call();
     const dividenContract = new web3.eth.Contract(DIVIDEN_ABI as AbiItem[], dividenDistributor);
     const totalRewardDistributend = await dividenContract.methods.totalDistributed.call().call();
@@ -28,14 +28,15 @@ const DashBoard = () => {
 
     const myclaimableReward = await dividenContract.methods.getUnpaidEarnings(address).call();
     setClaimableRewrd(myclaimableReward);
-    console.log("claimableReward", myclaimableReward);
-    console.log("totalRewardDistributend", totalRewardDistributend);
+
+    const totalRealised = await dividenContract.methods.getTotalRealised(address).call();
+    setTotalReward(totalRealised);
   }
 
 
   useEffect(()=> {
     if(address) {
-      init();
+      getRewardInfo();
     }
   },[address]);
 
