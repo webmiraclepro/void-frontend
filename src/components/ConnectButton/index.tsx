@@ -35,7 +35,7 @@ const ConnectButton = ({ actionText, onBalanceChange }: ButtonProps) => {
     }
     try {
       const value = await voidContract.methods.balanceOf(account).call();
-      const bal = web3.utils.fromWei(value, "ether");
+      const bal = web3.utils.fromWei(value, "Gwei");
       onBalanceChange(bal);
     } catch (e: any) {
       console.log(e);
