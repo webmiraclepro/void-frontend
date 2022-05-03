@@ -14,7 +14,7 @@ const SideBar = () => {
             <div className="flex items-end justify-center min-w-full h-full">
                 <div className="bg-x04051a h-[1476px] -mb-[60px] w-[402px] border border-violet-blue">
                     <div className="flex flex-col ml-[67px] mt-[160px] w-[246px] min-h-[1185px] items-center ">
-                        <Image className="h-[102px] w-[212px] object-cover ml-2" src="/img/voidcard-logo@1x.png" width={212} height={102} alt=""/>
+                        <img className="h-[102px] w-[212px] object-cover ml-2" src="/img/voidcard-logo@1x.png" alt=""/>
                         <div className="flex items-start h-[970px] min-w-[247px] mt-[119px] mr-[1px]">
                             <div className="items-start flex flex-col mt-[0.62px] min-h-[959px] w-[27px]">
                                 <div className="bg-[url('/img/combined-shape@1x.png')] bg-center bg-cover h-[25px] w-[25px] ml-[1px]"></div>
