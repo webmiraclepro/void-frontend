@@ -76,9 +76,9 @@ const ConnectButton = ({ actionText, onBalanceChange }: ButtonProps) => {
   }, [address]);
 
   return (
-    <div className='flex whitespace-nowrap tracking-normal font-avenirnext-medium font-medium text-xxxxl rounded-[10px] border border-violet-blue text-center text-x04051a w-full h-full'>
-      <button className='flex-1 whitespace-nowrap tracking-normal font-avenirnext-medium font-medium text-xxxxl rounded-[10px] border border-violet-blue text-center text-x04051a w-full h-full' onClick={connectWallet}>
-        {address ? <span className="whitespace-nowrap tracking-normal font-avenirnext-medium font-medium text-xxxl">{formatWalletAddress(address)}</span> : actionText}
+    <div className='flex rounded-lg border border-violet-blue text-center xl:w-2/5 xl:h-1/3 2xl:w-full 2xl:h-full'>
+      <button className='flex-1 font-avenirnext-medium font-medium text-xxxxl rounded-lg border border-violet-blue text-center text-x04051a xl:w-2/5 xl:h-1/3 2xl:w-full 2xl:h-full' onClick={connectWallet}>
+        {address ? <span className="font-avenirnext-medium font-medium text-xxxl">{formatWalletAddress(address)}</span> : actionText}
       </button>
     </div>
   );

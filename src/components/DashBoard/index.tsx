@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import voidContract from "../Web3/voidContract";
 import web3 from "../Web3";
 import { AbiItem } from 'web3-utils'
@@ -41,8 +41,9 @@ const DashBoard = () => {
   },[address]);
 
   return (
-    <div className="items-start flex flex-col ml-[28px] mt-[73.5px] min-h-[1161px] grow">
-      <div className="whitespace-nowrap tracking-normal ml-[17.5px] min-h-[47px] font-poppins font-medium text-x04051a text-xxxxxl">{data.title}</div>
+    // <div className="items-start flex flex-col ml-[28px] mt-[73.5px] min-h-[1161px] xl:w-3/5 2xl:grow">
+    <div className="items-start flex flex-col ml-7 mt-20 grow">
+      <div className=" ml-4 min-h-[47px] font-poppins font-medium text-x04051a text-xxxxxl">{data.title}</div>
       <Reward claimableReward ={claimableReward} totalReward = {totalReward} totalDistributed ={totalDistributed}/>
       <Statistic/>
       <TransactionHistory />

@@ -11,7 +11,7 @@ const RNavBar = () => {
 
   const handleOnClaim = useCallback(() => {
     console.log("handleOnClaim")
-  },[])
+  }, [])
 
   const [active, setActive] = useState(false)
   const [balance, setBalance] = useState<String | undefined>(undefined)
@@ -26,26 +26,27 @@ const RNavBar = () => {
   }, [balance])
 
   return (
-    <div className="h-[1280px] ml-[28px] w-[400px] overflow-hidden">
-      <div className="flex  h-full min-w-[400px]">
-        <div className="flex flex-row h-full bg-white w-full -mb-[43px]">
-          <img className="object-cover w-[1px] h-full" src="/img/linie-2@1x.png" alt=""/>
-          <div className="flex flex-col mt-[90px] ml-[31px] items-start min-h-[648px] w-[338px]">
-            <div className="flex items-start w-[338px]">
-              <div className="-mt-[40px] w-[219px] h-[58px]" >
+    // <div className="xl:w-1/5 2xl:h-[1280px] ml-[28px] 2xl:w-[400px] overflow-hidden">
+    <div className="2xl:h-[1280px] ml-7 overflow-hidden">
+      <div className="flex h-full w-full">
+        <div className="flex flex-row h-full bg-white w-full -mb-10">
+          <img className="object-cover w-[1px] h-full" src="/img/linie-2@1x.png" alt="verticalline" />
+          <div className="flex flex-col mt-24 ml-8 items-start">
+            <div className="flex items-start">
+              <div className="-mt-10 w-[219px] h-[58px]" >
                 <ConnectButton actionText="Connect Wallet" onBalanceChange={handleBalanceChange} />
               </div>
-              <div className="-mt-[40px] ml-[11px] w-[108px] h-[58px]">
+              <div className="-mt-10 ml-3 w-[108px] h-[58px]">
                 <ClaimButton actionText="Claim" onClaim={handleOnClaim} />
               </div>
             </div>
-            <MyWallet balance = {balance}/>
+            <MyWallet balance={balance} />
             <Nft />
-            <div className="flex flex-col -ml-[70px] mt-[30px] w-[488px] h-[263px] bg-[url('/img/pfad-6@1x.png')] bg-cover">
-              <div className="ml-[85px] font-poppins font-semibold text-x04051a text-xxxl">Total Rewards in $DAI</div>
-              <div className='flex flex-row items-center w-full mt-[60px]'>
-                <div className="ml-[85px] font-bold font-avenirnext-demibold text-x04051a text-xxxl">$2400</div>
-                <div className="ml-[135px] font-avenirnext-medium font-semibold text-x04051a text-fsl">BALANCE</div>
+            <div className="flex flex-col -ml-16 mt-8 w-full h-full pb-5 bg-[url('/img/pfad-6@1x.png')] bg-cover">
+              <div className="ml-20 font-poppins font-semibold text-x04051a text-xxxl">Total Rewards in $DAI</div>
+              <div className='flex flex-row justify-between items-center w-full mt-16'>
+                <div className="ml-20 font-bold font-avenirnext-demibold text-x04051a text-xxxl">$2400</div>
+                <div className="mr-12 font-avenirnext-medium font-semibold text-x04051a text-fsl">BALANCE</div>
               </div>
             </div>
             <MyGoals />
