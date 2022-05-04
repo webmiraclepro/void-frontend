@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import voidContract from "../Web3/voidContract";
 import web3 from "../Web3";
 import { CHAIN_ID } from "../../config";
-import { formatWalletAddress, readAddress, isMetaMaskInstalled } from "../../utils"
+import { formatWalletAddress, readAddress, isMetaMaskInstalled, changeNetwork } from "../../utils"
 
 import {useAddress} from '../AddressProvider';
 
@@ -14,12 +14,15 @@ interface ButtonProps {
 const ConnectButton = ({ actionText, onBalanceChange }: ButtonProps) => {
   const {address, updateAddress} = useAddress();
   const connectWallet = async () => {
-    if (address) {
+    if (address && window.ethereum.chainId === CHAIN_ID) {
       console.log('Already connected');
       return;
     }
     try {
-      // await changeNetwork(CHAIN_ID);
+      if(window.ethereum.chainId !== CHAIN_ID) {
+        await changeNetwork(CHAIN_ID);
+      }
+      
       const selectedAddress = await readAddress();
       updateAddress(selectedAddress);
     } catch (e: any) {
@@ -42,13 +45,6 @@ const ConnectButton = ({ actionText, onBalanceChange }: ButtonProps) => {
     }
   }
 
-  const changeNetwork = async (chainId: string) => {
-    return await window.ethereum.request({
-      method: 'wallet_switchEthereumChain',
-      params: [{ chainId: chainId }],
-    });
-  }
-
   useEffect(() => {
     if (!isMetaMaskInstalled()) {
       console.log('Please install metamask first');
@@ -56,7 +52,7 @@ const ConnectButton = ({ actionText, onBalanceChange }: ButtonProps) => {
     }
     // set current address
     setTimeout(() => updateAddress(window.ethereum?.selectedAddress as string), 100);
-
+    
     const listenerAccountsChanged = ([selectedAddress]: string[]) => {
       updateAddress(selectedAddress);
     };

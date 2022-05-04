@@ -35,7 +35,7 @@ const DashBoard = () => {
 
 
   useEffect(()=> {
-    if(address) {
+    if(address && window.ethereum.chainId === CHAIN_ID) {
       getRewardInfo();
     }
   },[address]);

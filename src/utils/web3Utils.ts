@@ -15,4 +15,11 @@ export async function readAddress() {
       return Boolean(window.ethereum);
     return false;
   }
+
+  export const changeNetwork = async (chainId: string) => {
+    return await window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{ chainId: chainId }],
+    });
+  }
   
