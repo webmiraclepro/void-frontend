@@ -12,7 +12,7 @@ const MyGoals = () => {
   return (
     <div>
       <div className="flex flex-col w-[338px] h-[294px]">
-        <div className="flex flex-col bg-white rounded-lg h-[130px] w-4/5 2xl:w-full shadow-[10px_24px_54px_#0000000f]">
+        <div className="flex flex-col bg-white rounded-lg h-[130px] w-full shadow-[10px_24px_54px_#0000000f]">
           <div className="flex flex-row items-center -mt-10">
             <div className="ml-2.5 font-poppins font-semibold text-x04051a text-xxl 2xl:text-xxxl">{data.mygoals}</div>
             <div className="flex flex-1 w-full ml-40">

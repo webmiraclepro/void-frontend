@@ -6,7 +6,7 @@ interface myWalletProps {
 const MyWallet = (Props: myWalletProps) => {
   
   return (
-    <div className="flex flex-col mt-14 items-start 2xl:w-[338px] xl:w-[260px]">
+    <div className="flex flex-col mt-14 items-start w-[338px] ">
       <div className="font-poppins 2xl:text-xxxl xl:text-xxl font-bold text-wallet mt-1 ml-3.5 mb-4">My Wallet</div>
       <div className="flex mt-2.5 rounded-lg w-full h-[201px]">
         <div className="flex flex-col ml-0 mt-0 w-full h-full rounded-lg" style={{ background: 'linear-gradient(139.94deg, #000c65 0%, #a9bac6 70.71%)' }}>

@@ -12,7 +12,7 @@ const SideBar = () => {
         <div className="-mt-32 md:hidden lg:block">
             <div className="flex items-end justify-center h-full">
                 <div className="bg-x04051a h-[1476px] -mb-16 pr-12 border border-violet-blue">
-                    <div className="flex flex-col 2xl:ml-16 xl:ml-8 mt-40 items-center h-full">
+                    <div className="flex flex-col 2xl:ml-16 ml-10 mt-40 items-center h-full">
                         <img className="2xl:h-[102px] 2xl:w-[212px] xl:h-[80px] xl:w-[160px] object-cover" src="/img/voidcard-logo@1x.png" alt="voidlogo" />
                         <div className="flex flex-row justify-start items-center w-full space-x-10 mt-28">
                             <div className="bg-[url('/img/combined-shape@1x.png')] bg-center bg-cover h-[25px] w-[25px] ml-px"></div>

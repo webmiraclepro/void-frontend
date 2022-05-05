@@ -1,6 +1,6 @@
 const Nft = () => {
   return (
-    <div className="items-start flex flex-col mt-8 2xl:w-[338px] xl:w-[260px]">
+    <div className="items-start flex flex-col mt-8 w-[338px]">
       <div className="pl-6 min-h-[35px] text-x04051a font-poppins 2xl:text-xxxl xl:text-xxl font-semibold">NFT</div>
       <div className="rounded-lg h-[201px] mt-2.5 w-full">
         <div className="bg-[url('/img/rectangle-687@1x.png')] items-end bg-center bg-cover rounded-lg flex h-full min-w-full ml-0 mt-0">
