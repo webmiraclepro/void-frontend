@@ -26,27 +26,26 @@ const RNavBar = () => {
   }, [balance])
 
   return (
-    // <div className="xl:w-1/5 2xl:h-[1280px] ml-[28px] 2xl:w-[400px] overflow-hidden">
-    <div className="2xl:h-[1280px] ml-7 overflow-hidden">
+    <div className="2xl:h-[1280px]">
       <div className="flex h-full w-full">
         <div className="flex flex-row h-full bg-white w-full -mb-10">
           <img className="object-cover w-[1px] h-full" src="/img/linie-2@1x.png" alt="verticalline" />
-          <div className="flex flex-col mt-24 ml-8 items-start">
+          <div className="flex flex-col mt-24 px-8 items-start">
             <div className="flex items-start">
               <div className="-mt-10 w-[219px] h-[58px]" >
                 <ConnectButton actionText="Connect Wallet" onBalanceChange={handleBalanceChange} />
               </div>
-              <div className="-mt-10 ml-3 w-[108px] h-[58px]">
+              <div className="-mt-10 2xl:ml-3 xl:ml-0 w-[108px] h-[58px]">
                 <ClaimButton actionText="Claim" onClaim={handleOnClaim} />
               </div>
             </div>
             <MyWallet balance={balance} />
             <Nft />
-            <div className="flex flex-col -ml-16 mt-8 w-full h-full pb-5 bg-[url('/img/pfad-6@1x.png')] bg-cover">
-              <div className="ml-20 font-poppins font-semibold text-x04051a text-xxxl">Total Rewards in $DAI</div>
-              <div className='flex flex-row justify-between items-center w-full mt-16'>
-                <div className="ml-20 font-bold font-avenirnext-demibold text-x04051a text-xxxl">$2400</div>
-                <div className="mr-12 font-avenirnext-medium font-semibold text-x04051a text-fsl">BALANCE</div>
+            <div className="flex flex-col mt-8 w-[338px] h-full pb-5 bg-[url('/img/pfad-6@1x.png')] bg-cover bg-white shadow-[10px_24px_54px_#0000000f]">
+              <div className="pl-6 font-poppins font-semibold text-x04051a text-xxl 2xl:text-xxxl">Total Rewards in $DAI</div>
+              <div className='flex flex-row justify-between items-center w-4/5 2xl:w-full mt-16'>
+                <div className="pl-6 font-bold font-avenirnext-demibold text-x04051a text-xl 2xl:text-xxxl">$2400</div>
+                <div className="pr-8 font-avenirnext-medium font-semibold text-x04051a text-xs 2xl:text-fsl">BALANCE</div>
               </div>
             </div>
             <MyGoals />

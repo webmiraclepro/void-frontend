@@ -56,11 +56,11 @@ function Statistic() {
         <div className="py-4 mr-2.5 ">
           <div className="ml-12 font-poppins font-semibold text-x04051a text-xxxl">{data.gasTrackrr}</div>
         </div>
-        <div className="flex h-[213px] ml-9 mt-16 mb-9 w-[324px]">
+        <div className="flex h-[213px] ml-[34px] mt-[65px] mb-[35px] w-[324px]">
           <div className="flex flex-1 w-[324px]">
             <div className="flex flex-1 items-end min-w-full">
-              <div className="relative h-[317px] -mb-24 -ml-9 w-[394px] font-poppins font-semibold text-regent-gray text-fsl">
-                <div className="bg-center bg-cover items-start flex h-[181px] min-w-[324px] absolute left-9 top-3 py-0 px-0 bg-[url('/img/vector-4@1x.png')]" >
+              <div className="relative h-[317px] -mb-24 -ml-[35px] w-[394px] font-poppins font-semibold text-regent-gray text-fsl">
+                <div className="bg-center bg-cover items-start flex h-[181px] min-w-[324px] absolute left-[35px] top-[12px] py-0 px-0 bg-[url('/img/vector-4@1x.png')]" >
                   <div className="relative mt-0 h-full w-[282px]">
                        <img className="absolute left-[143px] top-0 h-[80px] object-cover w-[139px]" src={"/img/vector-3@1x.png"} alt=""/>
                        <img className="absolute left-[42px] top-0 h-[80px] object-cover w-[139px]" src={"/img/vector-2@1x.png"} alt=""/>
@@ -71,7 +71,7 @@ function Statistic() {
                 <div className="h-[26px] absolute left-[316px] top-[197px] w-[42px]">{data.high}</div>
                 <div className="bg-cover bg-center h-[317px] absolute left-0 top-0 w-[394px] bg-[url('/img/bg@1x.png')]">
                   <img className="absolute left-[177px] top-[87px] object-cover h-[87px] w-[124px]" src="/img/needle@1x.png" alt=""/>
-                  <div className="absolute left-[183px] top-[136px] rounded-[14px] shadow-[0px_4px_24px_ #1f61c438] h-[28px] w-[28px] border-4 border-white" style={{ background: 'linear-gradient(180deg, #0d18a2 0%, rgba(63, 58, 185, 0.47) 34.48%, rgba(255, 255, 255, 0) 100%)' }}></div>
+                  <div className="absolute left-[183px] top-[136px] rounded-[14px] shadow-[0px_4px_24px_ #1f61c438] h-[28px] w-[28px] border-[4px] border-white" style={{ background: 'linear-gradient(180deg, #0d18a2 0%, rgba(63, 58, 185, 0.47) 34.48%, rgba(255, 255, 255, 0) 100%)' }}></div>
                 </div>
               </div>
             </div>
