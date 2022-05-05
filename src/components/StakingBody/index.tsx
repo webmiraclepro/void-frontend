@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
-import Image from 'next/image';
 import StakingContract from '../Web3/StakingContract';
 import NftContract from '../Web3/NftContract';
 import StakeModal from '../StakeModal';
@@ -56,9 +55,9 @@ const StakingBody = () => {
   }, [address])
 
   return (
-    <div id="staking-body" className='flex justify-center'>
-      <div className="container flex flex-row justify-center items-center w-[95%] max-w-[1000px] mx-auto my-12">
-        <div id="staking-body-card" className='flex flex-col items-center w-2/3 max-w-[400px] m-auto h-[400px] py-1 rounded-[25px] bg-[#fafafa] shadow-[0_5px_15px_#0000004d]'>
+    <div id="staking-body" className='w-full'>
+      <div className="container flex flex-col lg:flex-row lg:justify-center items-center w-[95%] max-w-[1000px] mx-auto my-12">
+        <div id="staking-body-card" className='flex flex-col items-center w-full md:w-2/3 max-w-[400px] m-auto h-[400px] py-1 rounded-[25px] bg-[#fafafa] shadow-[0_5px_15px_#0000004d]'>
           <div className='text-xxl font-bold my-6'>
             STAKING
           </div>
@@ -92,10 +91,10 @@ const StakingBody = () => {
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" className="" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg>
           </div>
         </div>
-        <div className='w-[50px] h-[50px]'>
-          <Image src='/images/vs.png' width={40} height={40} />
+        <div className='my-10'>
+          <img src='/images/vs.png' className='w-[30px] h-auto' />
         </div>
-        <div className='flex flex-col items-center w-2/3 max-w-[400px] h-[400px] m-auto rounded-[25px] py-1 bg-[#fafafa] shadow-[0_5px_15px_#0000004d]'>
+        <div className='flex flex-col items-center w-full md:w-2/3 max-w-[400px] h-[400px] m-auto rounded-[25px] py-1 bg-[#fafafa] shadow-[0_5px_15px_#0000004d]'>
           <div className='text-xxl font-bold my-6'>
             UNSTAKING
           </div>

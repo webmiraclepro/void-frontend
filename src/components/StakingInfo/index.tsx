@@ -64,32 +64,32 @@ const StakingInfo = () => {
   }, [address])
 
   return (
-    <div id="staking-info" className='flex justify-center w-[95%] max-w-[1200px] mx-auto mt-0 xl:mt-16'>
+    <div id="staking-info" className='flex justify-center w-[95%] md:max-w-[600px] lg:max-w-[1200px] mx-auto mt-0 xl:mt-16'>
 
-      <div className='flex flex-row items-center justify-between space-x-8 w-full rounded-[35px] shadow-[0_5px_15px_#0000004d] py-3 px-[4%]'>
+      <div className='flex sm:flex-col flex-wrap md:flex-row items-center justify-between lg:space-x-6 w-full rounded-[35px] shadow-[0_5px_15px_#0000004d] py-3 px-[4%]'>
 
-        <div id="staking-info-item-staked" className="flex space-x-6 items-center text-center  rounded-[35px] bg-[#ffe782] shadow-[0_5px_15px_#0000004d]">
+        <div id="staking-info-item-staked" className="flex space-x-6 items-center text-center my-1 rounded-[35px] bg-[#ffe782] shadow-[0_5px_15px_#0000004d]">
           <img src={stakeImg} className='w-[75px] h-auto' alt="stake" />
           <div className="flex flex-col h-full justify-center font-bold text-fsl pr-6 py-1" >
             <div className="">{staked}</div>
             <div className="">STAKED</div>
           </div>
         </div>
-        <div id="staking-info-item-yield" className="flex items-center space-x-6  rounded-[35px] bg-[#c5ff82] shadow-[0_5px_15px_#0000004d]">
+        <div id="staking-info-item-yield" className="flex items-center space-x-6 my-1 rounded-[35px] bg-[#c5ff82] shadow-[0_5px_15px_#0000004d]">
           <img src={yieldIMg} className='w-[75px] h-auto' alt="stake" />
           <div className="flex flex-col h-full justify-center text-center font-bold text-fsl pr-6 py-1">
             <div className="">0</div>
             <div className="">YIELD</div>
           </div>
         </div>
-        <div id="staking-info-item-total" className="flex items-center space-x-6 rounded-[35px] bg-[#9ae0fe] shadow-[0_5px_15px_#0000004d]">
+        <div id="staking-info-item-total" className="flex items-center space-x-6 my-1 rounded-[35px] bg-[#9ae0fe] shadow-[0_5px_15px_#0000004d]">
           <img src={totalImg} className='w-[75px] h-auto' alt="stake" />
           <div className="flex flex-col h-full justify-center  pr-6 py-1 font-bold text-fsl">
             <div className="text-center">{totalToken}</div>
             <div className="text-center">TOTAL</div>
           </div>
         </div>
-        <div id="staking-info-item-claimed" className=" flex items-center space-x-6 pr-0 rounded-[45px] bg-[#eb99ca] shadow-[0_5px_15px_#0000004d]">
+        <div id="staking-info-item-claimed" className="flex my-1 md:mt-2 lg:mt-0 ml-auto mr-auto items-center space-x-6 pr-0 rounded-[45px] bg-[#eb99ca] shadow-[0_5px_15px_#0000004d]">
           <div className="flex flex-col h-full justify-center text-center font-bold text-fsl px-6 py-1">
             <div className="">{stakeEarned}</div>
             <div className="">UNREALIZED</div>
