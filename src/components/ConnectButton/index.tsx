@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import StakingContract from "../Web3/StakingContract";
 import web3 from "../Web3";
 import { CHAIN_ID } from "../../config";
-import { formatWalletAddress, readAddress, isMetaMaskInstalled } from "../../utils"
+import { formatWalletAddress, readAddress, isMetaMaskInstalled, changeNetwork } from "../../utils"
 
 import {useAddress} from '../AddressProvider';
 
@@ -13,11 +13,14 @@ interface ButtonProps {
 const ConnectButton = ({ actionText }: ButtonProps) => {
   const {address, updateAddress} = useAddress();
   const connectWallet = async () => {
-    if (address) {
+    if (address && window.ethereum.chainId === CHAIN_ID) {
       console.log('Already connected');
       return;
     }
     try {
+      if(window.ethereum.chainId !== CHAIN_ID) {
+        await changeNetwork(CHAIN_ID);
+      }
       const selectedAddress = await readAddress();
       updateAddress(selectedAddress);
     } catch (e: any) {
