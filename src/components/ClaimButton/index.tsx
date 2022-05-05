@@ -23,8 +23,8 @@ const ClaimButton = ({ actionText, onClaim }: ButtonProps) => {
   }
 
   return (
-    <div className='flex w-[90px] h-[60px] text-center rounded-[45px] h-full shadow-[0_5px_15px_#0000004d] bg-white hover:border border-gray-900'>
-      <button className='flex-1 font-avenirnext-medium font-medium text-xl rounded-[45px] border text-center text-[#eb99ca] w-full h-full' onClick={claim}>
+    <div className='flex h-[70px] w-[100px] ml-auto mr-0 text-center rounded-[45px] shadow-[0_5px_15px_#0000004d] bg-white hover:border border-gray-900'>
+      <button className='flex-1 font-avenirnext-medium font-bold text-xl rounded-[45px] border text-center text-[#eb99ca] w-full h-full' onClick={claim}>
         {actionText}
       </button>
     </div>

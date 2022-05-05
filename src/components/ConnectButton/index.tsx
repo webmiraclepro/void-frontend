@@ -53,7 +53,7 @@ const ConnectButton = ({ actionText }: ButtonProps) => {
 
   return (
     <div className='flex w-full text-center rounded-[25px] h-full shadow-[0_5px_15px_#0000004d] border hover:border-gray-900'>
-      <button className='flex-1 font-avenirnext-medium font-medium text-xxl rounded-[25px] text-center text-x04051a w-full h-full' onClick={connectWallet}>
+      <button className='flex-1 font-avenirnext-medium font-bold text-xxl rounded-[25px] text-center text-x04051a w-full h-full' onClick={connectWallet}>
         {address ? <span className="font-avenirnext-medium font-medium text-xl">{formatWalletAddress(address)}</span> : actionText}
       </button>
     </div>
