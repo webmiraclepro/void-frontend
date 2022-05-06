@@ -42,7 +42,7 @@ const DashBoard = () => {
 
   return (
     <div className="items-start flex flex-col px-7 mt-20 grow">
-      <div className=" ml-4 mb-4 font-poppins font-medium text-x04051a 2xl:text-xxxxxl xl:text-xxxxl">{data.title}</div>
+      <div className=" ml-4 mb-4 font-poppins font-medium text-x04051a text-xxxxxl">{data.title}</div>
       <Reward claimableReward ={claimableReward} totalReward = {totalReward} totalDistributed ={totalDistributed}/>
       <Statistic/>
       <TransactionHistory />

@@ -42,10 +42,10 @@ const RNavBar = () => {
             <MyWallet balance={balance} />
             <Nft />
             <div className="flex flex-col mt-8 w-[338px] h-full pb-5 bg-[url('/img/pfad-6@1x.png')] bg-cover bg-white shadow-[10px_24px_54px_#0000000f]">
-              <div className="pl-6 font-poppins font-semibold text-x04051a text-xxl 2xl:text-xxxl">Total Rewards in $DAI</div>
-              <div className='flex flex-row justify-between items-center w-4/5 2xl:w-full mt-16'>
-                <div className="pl-6 font-bold font-avenirnext-demibold text-x04051a text-xl 2xl:text-xxxl">$2400</div>
-                <div className="pr-8 font-avenirnext-medium font-semibold text-x04051a text-xs 2xl:text-fsl">BALANCE</div>
+              <div className="pl-6 font-poppins font-semibold text-x04051a text-xxxl">Total Rewards in $DAI</div>
+              <div className='flex flex-row justify-between items-center w-full mt-16'>
+                <div className="pl-6 font-bold font-avenirnext-demibold text-x04051a text-xxxl">$2400</div>
+                <div className="pr-10 font-avenirnext-medium font-semibold text-x04051a text-fsl">BALANCE</div>
               </div>
             </div>
             <MyGoals />
