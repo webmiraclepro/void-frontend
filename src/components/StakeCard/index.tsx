@@ -1,7 +1,7 @@
 interface CardProps {
   tokenId: string,
   action: string,
-  onhandle: () => void;
+  onhandle: (action:string, tokenId:string) => void;
 }
 
 
@@ -10,7 +10,7 @@ const StakeCard = ({ tokenId, action, onhandle }: CardProps) => {
   const handleClick = (action: string, tokenId: string) => {
     console.log(action);
     console.log(tokenId);
-    onhandle();
+    onhandle(action, tokenId);
   }
   
   return (

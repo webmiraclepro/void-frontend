@@ -15,7 +15,6 @@ const ClaimButton = ({ actionText, onClaim }: ButtonProps) => {
 
   const claim = async () => {
     try {
-      const selectedAddress = await readAddress();
       onClaim();
     } catch (e: any) {
       console.log(e);

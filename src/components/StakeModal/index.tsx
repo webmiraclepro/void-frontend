@@ -1,10 +1,13 @@
 import { useState, useCallback, useEffect } from 'react'
 import StakeCard from "../StakeCard"
 import ReactModal from 'react-modal';
+import StakingContract from '../Web3/StakingContract';
+import { CHAIN_ID } from '../../config';
+
 const close_icon = '/svg/close_icon.svg';
 
 interface ModalProps {
-  tokenIds: Array<{ token_id: string }> | undefined,
+  tokenIds: Array<{}> | undefined,
   isStake: boolean,
   isUnStake: boolean,
   isClaim: boolean,
@@ -45,18 +48,59 @@ const StakeModal = ({ tokenIds, isStake, isUnStake, isClaim, closeModal }: Modal
   const actionText = () => {
     if (isStake) {
       action = "stake";
+      return 0;
     }
     if (isUnStake) {
       action = "unStake";
+      return 1;
     }
     if (isClaim) {
       action = "claim";
+      return 2;
     }
   }
-  const handleStakeCard = useCallback(() => {
-    console.log("handleStakeCard")
+  const handleStakeCard = useCallback((action:string, tokenId:string) => {
+    console.log("handleStakeCard");
+    if(window.ethereum.chainId !== CHAIN_ID) {
+      closeModal();
+      return;
+    }
+    const actionVal = actionText();
+    if(actionVal == 0){
+      console.log("stakeNFt");
+      stakeNFT(tokenId)
+
+    }
+    if(actionVal == 1) {
+      console.log("unstakeNFt");
+      unStakeNFT(tokenId);
+    }
+
+    if(actionVal == 2) {
+      console.log("harvest");
+      harvest(tokenId);
+    }
     closeModal();
   }, [])
+
+  const stakeNFT = async (stakeTokenId: string) => {
+    const staked = await StakingContract.methods.stakeNFT(Number(stakeTokenId)).call();
+    console.log("staked", staked);
+  }
+
+  const unStakeNFT = async (unStakeTokenId: string) => {
+    const unStaked = await StakingContract.methods.unStakeNFT(Number(unStakeTokenId)).call();
+    console.log("unStaked", unStaked);
+  }
+
+  const harvest = async (harvestTokenId: string) => {
+    const claimed = await StakingContract.methods.harvest(Number(harvestTokenId)).call();
+    console.log("harvest", claimed);
+  }
+
+  const handleAfterOpenFunc = () => {
+    console.log("handleAfterOpen");
+  }
 
 
   actionText();
@@ -64,6 +108,7 @@ const StakeModal = ({ tokenIds, isStake, isUnStake, isClaim, closeModal }: Modal
   return (
     <ReactModal
       isOpen={isStake ? isStake : isUnStake ? isUnStake : isClaim ? isClaim : false}
+      onAfterOpen={handleAfterOpenFunc}
       // onRequestClose={closeModal}
       style={customStyles}
       ariaHideApp={false}
@@ -74,7 +119,7 @@ const StakeModal = ({ tokenIds, isStake, isUnStake, isClaim, closeModal }: Modal
           <img className="w-[30px] h-auto cursor-pointer" src={close_icon} alt="closeIcon" />
         </button>
       </div>
-      <div className='flex flex-col w-1/2 h-1/2 space-y-4 justify-center'>
+      <div className='flex flex-col space-y-4 justify-center'>
         {
           tokenIds?.map((k: any) => {
             return (
@@ -84,6 +129,18 @@ const StakeModal = ({ tokenIds, isStake, isUnStake, isClaim, closeModal }: Modal
             )
           })
 
+        }
+        {
+          !tokenIds && isStake && 
+          <div className='flex font-bold text-xl'>NO NFTS TO STAKE!</div>
+        }
+         {
+          !tokenIds && isUnStake && 
+          <div className='inline-flex font-bold text-xl'>NO NFTS TO UNSTAKE!</div>
+        }
+        {
+          !tokenIds && isClaim &&
+          <div className='flex font-bold text-xl'>NO TOKENS TO CLAIM!</div>
         }
       </div>
     </ReactModal>

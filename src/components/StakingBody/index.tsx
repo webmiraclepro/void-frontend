@@ -10,6 +10,7 @@ const stakeCardImg = '/images/Mike.png'
 const GoopIcon = '/svg/Goop.svg';
 const clockIcon = '/svg/clock.svg';
 const unStakeImg = '/images/Quad1.png';
+const downArrowIcon = '/svg/downarrow.svg';
 
 const StakingBody = () => {
   const { address } = useAddress();
@@ -17,7 +18,7 @@ const StakingBody = () => {
   const [isUnStake, setIsUnStake] = useState(false);
   const [tokenPerBlock, setTokenPerBlock] = useState<String | undefined>(undefined);
   const [amountNft, setAmountNft] = useState<String | undefined>(undefined);
-  const [tokenIds, setTokenIds] = useState<Array<{ token_id: string }> | undefined>(undefined);
+  const [tokenIds, setTokenIds] = useState<Array<{}> | undefined>(undefined);
 
   function openModal() {
 
@@ -84,11 +85,11 @@ const StakingBody = () => {
           <div className='text-xxl font-bold mt-5'>
             NFTS TO STAKE
           </div>
-          <div className="flex justify-between rounded-[25px] w-3/5 mx-auto mt-5 mb-12 py-2.5 px-6 shadow-[0_5px_15px_#0000004d] border-2 border-[#9ae0fe] bg-[#9ae0fe] hover:border border-gray-900 cursor-pointer"
+          <div className="flex justify-between items-center rounded-[25px] w-3/5 mx-auto mt-5 mb-12 py-2.5 px-6 shadow-[0_5px_15px_#0000004d] border-2 border-[#9ae0fe] bg-[#9ae0fe] hover:border-gray-900 cursor-pointer"
             onClick={() => { setIsStake(true); setIsUnStake(false) }}
           >
             <div className="font-avenirnext-bold font-bold text-fsl text-x04051a">CHOOSE NFTS</div>
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" className="" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg>
+            <img src={downArrowIcon} className="w-[25px] h-auto"/>
           </div>
         </div>
         <div className='my-10'>
@@ -117,16 +118,16 @@ const StakingBody = () => {
           <div className='text-xxl font-bold mt-5'>
             NFTS TO UNSTAKE
           </div>
-          <div className="flex justify-between rounded-[25px] w-3/5 mx-auto mt-5 mb-12 py-2.5 px-6 shadow-[0_5px_15px_#0000004d] border-2 border-[#ffe782] bg-[#ffe782] hover:border border-gray-900 cursor-pointer"
+          <div className="flex justify-between items-center rounded-[25px] w-3/5 mx-auto mt-5 mb-12 py-2.5 px-6 shadow-[0_5px_15px_#0000004d] border-2 border-[#ffe782] bg-[#ffe782] hover:border-gray-900 cursor-pointer"
             onClick={() => { setIsUnStake(true); setIsStake(false) }}
           >
             <div className="font-avenirnext-bold font-bold text-fsl text-x04051a">CHOOSE NFTS</div>
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" className="staking-select-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg>
+            <img src={downArrowIcon} className="w-[25px] h-auto"/>
           </div>
         </div>
 
       </div>
-      <StakeModal tokenIds={[{ token_id: "12" }, { token_id: "12" }, { token_id: "12" }]} isClaim={false} isStake={isStake} isUnStake={isUnStake} closeModal={closeModal} />
+      <StakeModal tokenIds={tokenIds} isClaim={false} isStake={isStake} isUnStake={isUnStake} closeModal={closeModal} />
     </div>
   )
 }
