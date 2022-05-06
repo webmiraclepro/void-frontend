@@ -121,9 +121,9 @@ const StakeModal = ({ tokenIds, isStake, isUnStake, isClaim, closeModal }: Modal
       </div>
       <div className='flex flex-col space-y-4 justify-center'>
         {
-          tokenIds?.map((k: any) => {
+          tokenIds?.map((k: any, index: number) => {
             return (
-              <div className="">
+              <div className="" key={index}>
                 <StakeCard onhandle={handleStakeCard} tokenId={k.token_id} action={action} />
               </div>
             )

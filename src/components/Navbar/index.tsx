@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useState, useEffect, useRef } from "react";
 import ConnectButton from '../ConnectButton'
 const close_icon = '/svg/close_icon.svg';
@@ -50,19 +51,27 @@ const Navbar = ({ logo }: any) => {
             <div className="pl-[5%]">
               <img src={logo} className='w-[50px] h-auto' />
             </div>
+            <Link href="#staking">
 
-            <a onClick={() => setOpenNav(false)} href="#staking" className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
-              STAKING HUB
-              <img src={goopIcon} className="ml-1" />
-            </a>
-            <a onClick={() => setOpenNav(false)} href="#allow-list" className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
-              ALLOWLIST
-              <img src={allowListIcon} className="ml-1" />
-            </a>
-            <a onClick={() => setOpenNav(false)} href="/" className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
-              WEBSITE
-              <img src={websiteIcon} className="ml-1" />
-            </a>
+              <a onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
+                STAKING HUB
+                <img src={goopIcon} className="ml-1" />
+              </a>
+            </Link>
+            <Link href="#allow-list">
+
+              <a onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
+                ALLOWLIST
+                <img src={allowListIcon} className="ml-1" />
+              </a>
+            </Link>
+            <Link href="/">
+
+              <a onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
+                WEBSITE
+                <img src={websiteIcon} className="ml-1" />
+              </a>
+            </Link>
           </div>
         </div>
       }
@@ -70,25 +79,34 @@ const Navbar = ({ logo }: any) => {
         {/* Desktop Nav */}
 
         <div className="flex space-x-16 items-center hidden xl:flex">
-          <a href="/" className="flex items-center pl-12">
-            <img className="h-4/5 w-4/5" src={logo} alt="logo" />
-            <div className="flex flex-col justify-center items-center pl-2.5">
-              <div id="staking-nav-brand-title" className="text-xxxxl font-bold">Illogics</div>
-              <div id="staking-nav-brand-subtitle" className="text-fsl font-bold">Ecosystem</div>
-            </div>
-          </a>
-          <a href="#staking" className="flex text-xl font-body transition-all font-bold hover:text-navhover">
-            STAKING HUB
-            <img src={goopIcon} className="w-[25px] pl-1" />
-          </a>
-          <a href="#allow-list" className="flex text-xl font-body transition-all font-bold hover:text-navhover">
-            ALLOWLIST
-            <img src={allowListIcon} className="w-[25px] pl-1" />
-          </a>
-          <a href="/" className="flex text-xl font-body transition-all font-bold hover:text-navhover">
-            WEBSITE
-            <img src={websiteIcon} className="w-[25px] pl-1" />
-          </a>
+          <Link href="/" >
+            <a className="flex items-center pl-12">
+              <img className="h-4/5 w-4/5" src={logo} alt="logo" />
+              <div className="flex flex-col justify-center items-center pl-2.5">
+                <div id="staking-nav-brand-title" className="text-xxxxl font-bold">Illogics</div>
+                <div id="staking-nav-brand-subtitle" className="text-fsl font-bold">Ecosystem</div>
+              </div>
+            </a>
+          </Link>
+          <Link href="#staking">
+
+            <a className="flex text-xl font-body transition-all font-bold hover:text-navhover">
+              STAKING HUB
+              <img src={goopIcon} className="w-[25px] pl-1" />
+            </a>
+          </Link>
+          <Link href="#allow-list">
+            <a className="flex text-xl font-body transition-all font-bold hover:text-navhover">
+              ALLOWLIST
+              <img src={allowListIcon} className="w-[25px] pl-1" />
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="flex text-xl font-body transition-all font-bold hover:text-navhover">
+              WEBSITE
+              <img src={websiteIcon} className="w-[25px] pl-1" />
+            </a>
+          </Link>
         </div>
 
         {!openNav &&
