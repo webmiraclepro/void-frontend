@@ -10,7 +10,8 @@
     "cypress": "cypress open",
     "typechain": "typechain --target=ethers-v5 'src/**/abis/**/*.json' --out-dir src/generated/",
     "clean": "rm -fr src/generated/",
-    "test": "echo Test units are not specified yet. && exit 0"
+    "test": "echo Test units are not specified yet. && exit 0",
+    "export": "yarn build && next export"
   },
   "dependencies": {
     "@fontsource/raleway": "^4.5.1",
